@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= article.title %> - My Blog</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/">My Blog</a></h1>
+  </header>
+
+  <main>
+    <article class="full-article">
+      <h2><%= article.title %></h2>
+      <p class="date"><%= article.date %></p>
+      <div class="content">
+        <p><%= article.content %></p>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
+
+<!-- Variables:
+article: Object { title, date, content }
+-->

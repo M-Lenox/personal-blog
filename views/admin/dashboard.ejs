@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Admin</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <nav>
+      <a href="/admin/add">Add New Article</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-list">
+      <% articles.forEach(article => { %>
+        <div class="dashboard-item">
+          <h2><%= article.title %></h2>
+          <p class="date"><%= article.date %></p>
+          <div class="actions">
+            <a href="/admin/edit/<%= article.id %>">Edit</a>
+            <form action="/admin/delete/<%= article.id %>" method="POST" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </section>
+  </main>
+</body>
+</html>
+
+<!-- Variables:
+articles: Array of article objects [{ id, title, date }]
+-->
